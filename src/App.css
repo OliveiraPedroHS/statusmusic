@@ -1,0 +1,98 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f5;
+  font-family: "Arial", sans-serif;
+}
+
+/* Simulação do iPhone 16 Pro (Reduzido) */
+.iphone-container {
+  width: 300px; /* Largura reduzida */
+  height: 650px; /* Altura reduzida */
+  background-color: #fff;
+  border-radius: 30px; /* Bordas arredondadas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+/* Simulação do notch (entalhe) */
+.notch {
+  width: 150px;
+  height: 20px;
+  background-color: black;
+  border-radius: 10px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Conteúdo dentro do iPhone */
+.screen {
+  flex: 1;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Botão inferior (Home virtual ou barra) */
+.home-button {
+  width: 100px;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 4px;
+  margin: 10px auto;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .iphone-container {
+    width: 250px;
+    height: 540px;
+    border-radius: 25px;
+  }
+
+  .notch {
+    width: 130px;
+    height: 15px;
+  }
+
+  .home-button {
+    width: 80px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iphone-container {
+    width: 200px;
+    height: 430px;
+    border-radius: 20px;
+  }
+
+  .notch {
+    width: 100px;
+    height: 12px;
+  }
+
+  .home-button {
+    width: 60px;
+    height: 2px;
+  }
+}
