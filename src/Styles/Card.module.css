@@ -1,0 +1,96 @@
+/* Card.module.css */
+.all {
+    background-color: #443333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Alinha os elementos em linha */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transições */
+    margin-bottom: 15px; /* Espaço entre os cards */
+  }
+  
+  .all:hover {
+    transform: scale(1.05);
+    background-color: #DF1737; /* Cor do fundo no hover */
+  }
+  
+  .all div {
+    margin-left: 10px; /* Distância entre o quadrado e o texto */
+  }
+  
+  .all div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .all div:last-child {
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  /* Simulando a imagem ao lado do nome */
+  .cardImagePlaceholder {
+    background-color: #444; /* Cor escura para simular a imagem */
+    width: 50px; /* Largura do quadrado */
+    height: 50px; /* Altura do quadrado */
+    border-radius: 8px; /* Bordas arredondadas */
+  }
+  
+  /* Imagem real (caso queira usar uma imagem real) */
+  .all img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo para a numeração */
+  .cardNumber {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Distância entre o número e o título */
+    text-align: center;
+  }
+  
+  /* Media query para telas pequenas (dispositivos móveis) */
+  @media (max-width: 600px) {
+    .all {
+      padding: 15px; /* Diminui o padding nos cards */
+      margin-bottom: 10px; /* Menor espaço entre os cards */
+    }
+  
+    /* Ajustando o tamanho da numeração para telas pequenas */
+    .cardNumber {
+      width: 25px; /* Ajusta o tamanho do círculo */
+      height: 25px;
+      font-size: 14px;
+    }
+  
+    /* Ajuste no tamanho do quadrado de imagem simulada */
+    .cardImagePlaceholder {
+      width: 40px;
+      height: 40px;
+    }
+  
+    /* Ajuste no título */
+    .all div:first-child {
+      font-size: 16px; /* Reduz o tamanho da fonte do título */
+    }
+  
+    /* Ajuste nas informações do card */
+    .all div:last-child {
+      font-size: 12px; /* Reduz o tamanho da fonte das informações */
+    }
+  }
+  

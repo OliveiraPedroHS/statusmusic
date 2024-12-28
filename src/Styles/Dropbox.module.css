@@ -1,0 +1,29 @@
+/* Dropbox.module.css */
+.drop {
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+    color: #fff;
+  }
+  
+  .drop select {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;  /* Borda inicial */
+    width: 200px;
+    cursor: pointer;
+    transition: border 0.3s ease, background-color 0.3s ease; /* Transição suave */
+  }
+  
+  .drop select:focus {
+    outline: none; /* Remove o contorno padrão */
+    border: 2px solid #DF1737; /* Borda personalizada quando clicado */
+    background-color: #1e1e1e; /* Cor de fundo alterada quando clicado */
+  }
+  
+  .drop select:focus option {
+    background-color: #DF1737; /* Cor de fundo das opções ao clicar */
+  }
+  
