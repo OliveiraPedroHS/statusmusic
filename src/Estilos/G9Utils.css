@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); 
+
+.container_g9 {
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  background-color: #1a070e;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.h1_G9 {
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Botões para selecionar estação */
+.button-container {
+    padding: 1rem;
+  margin: 55px;
+  margin: 35px 55px 0px 55px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.season-button {
+  background-color: #df1737;
+  border-radius: 1.25rem;
+  border: none;
+  color: white;
+  width: 5rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.season-button:hover {
+  background-color: #df1738b7;
+}
+
+.season-button.active {
+  background-color: DF1737;
+  transform: scale(1.05);
+}
+
+/* Estação selecionada */
+.season-display {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.season-display h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.season-display ul {
+  list-style: none;
+  padding: 0;
+}
+
+.season-display ul li {
+  font-size: 16px;
+  color: #d9d9d9;
+  padding: 8px 0;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.season-display ul li:last-child {
+  border-bottom: none;
+}
+
+.season-display ul li strong {
+  font-weight: bold;
+  color: #d9d9d9;
+}
+
+.season-display ul li span {
+  color: #666;
+}
+
+/* Responsividade para iPhone 16 Pro */
+@media only screen and (max-width: 430px) {
+  .container_g9 {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .season-button {
+    width: 100%; /* Botões ocupam toda a largura */
+    text-align: center;
+  }
+
+  .season-display ul li {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .season-display ul li strong,
+  .season-display ul li span {
+    margin-bottom: 5px;
+  }
+}
+
+/* Estilo horizontal (landscape) */
+@media only screen and (orientation: landscape) {
+  .container_g9 {
+    max-width: 600px;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .season-button {
+    flex: 1 0 48%; /* Dois botões por linha */
+  }
+}

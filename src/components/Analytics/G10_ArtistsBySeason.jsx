@@ -1,92 +1,71 @@
-// src/components/G10_ArtistsBySeason.jsx
-
 import React, { useState, useEffect } from "react";
 import { calcularTop3ArtistasPorEstacao } from "../../utils/g10Utils"; // Importando a função do G10Utils
 import sampleData from "../../data/sampleData"; // Dados de exemplo (pode ser um JSON real)
+import "../../Estilos/G10Utils.css"; // Importa o arquivo CSS
 
 const G10_ArtistsBySeason = () => {
-  const [top3ArtistasPorEstacao, setTop3ArtistasPorEstacao] = useState({
+  const [top3ArtistasPorEstacao,setTop3ArtistasPorEstacao] = useState({
     inverno: [],
     primavera: [],
     verão: [],
     outono: [],
   });
 
+  const [estacaoSelecionada, setEstacaoSelecionada] = useState(""); // Estado para controlar qual estação está aberta
+
   useEffect(() => {
     const topArtistas = calcularTop3ArtistasPorEstacao(sampleData); // Calcula os top 3 artistas por estação
     setTop3ArtistasPorEstacao(topArtistas); // Atualiza o estado com os artistas calculados
-  }, []); // O efeito será executado apenas uma vez quando o componente for montado
+  }, []); // Executado apenas uma vez ao montar o componente
+
+  const toggleEstacao = (estacao) => {
+    // Alterna entre abrir e fechar a estação selecionada
+    setEstacaoSelecionada((prevEstacao) =>
+      prevEstacao === estacao ? "" : estacao
+    );
+  };
 
   return (
-    <div className="artists-container">
-      <h1>Top 3 Artistas por Estação</h1>
-
-      {/* Inverno */}
-      <div>
-        <h2>Inverno</h2>
-        <ul>
-          {top3ArtistasPorEstacao.inverno.length > 0 ? (
-            top3ArtistasPorEstacao.inverno.map((artista, index) => (
-              <li key={index}>
-                <strong>{artista.nome}</strong> - {artista.tempoEmMinutos}{" "}
-                minutos
-              </li>
-            ))
-          ) : (
-            <p>Carregando...</p>
-          )}
-        </ul>
+    <div className="container_g10">
+      <h1 className="h1_g10">Top 3 Artistas por Estação do ano</h1>
+      {/* Botões para selecionar estação */}
+      <div className="button-container_g10">
+        {["inverno", "primavera", "verão", "outono"].map((estacao) => (
+          <button
+            key={estacao}
+            className={`season-button_g10 ${
+              estacaoSelecionada === estacao ? "active" : ""
+            }`}
+            onClick={() => toggleEstacao(estacao)}
+          >
+            {estacao.charAt(0).toUpperCase() + estacao.slice(1)}
+          </button>
+        ))}
       </div>
-
-      {/* Primavera */}
-      <div>
-        <h2>Primavera</h2>
-        <ul>
-          {top3ArtistasPorEstacao.primavera.length > 0 ? (
-            top3ArtistasPorEstacao.primavera.map((artista, index) => (
-              <li key={index}>
-                <strong>{artista.nome}</strong> - {artista.tempoEmMinutos}{" "}
-                minutos
-              </li>
-            ))
-          ) : (
-            <p>Carregando...</p>
-          )}
-        </ul>
-      </div>
-
-      {/* Verão */}
-      <div>
-        <h2>Verão</h2>
-        <ul>
-          {top3ArtistasPorEstacao.verão.length > 0 ? (
-            top3ArtistasPorEstacao.verão.map((artista, index) => (
-              <li key={index}>
-                <strong>{artista.nome}</strong> - {artista.tempoEmMinutos}{" "}
-                minutos
-              </li>
-            ))
-          ) : (
-            <p>Carregando...</p>
-          )}
-        </ul>
-      </div>
-
-      {/* Outono */}
-      <div>
-        <h2>Outono</h2>
-        <ul>
-          {top3ArtistasPorEstacao.outono.length > 0 ? (
-            top3ArtistasPorEstacao.outono.map((artista, index) => (
-              <li key={index}>
-                <strong>{artista.nome}</strong> - {artista.tempoEmMinutos}{" "}
-                minutos
-              </li>
-            ))
-          ) : (
-            <p>Carregando...</p>
-          )}
-        </ul>
+      {/* Exibir artistas da estação selecionada */}
+      <div className="season-display_g10">
+        {estacaoSelecionada && (
+          <div>
+            <h2>
+              {estacaoSelecionada.charAt(0).toUpperCase() +
+                estacaoSelecionada.slice(1)}
+            </h2>
+            <ul>
+              {top3ArtistasPorEstacao[estacaoSelecionada].length > 0 ? (
+                top3ArtistasPorEstacao[estacaoSelecionada].map(
+                  (artista, index) => (
+                    <li key={index}>
+                      <strong>{artista.nome}</strong>{" "}
+                      <span>{artista.tempoEmMinutos} minutos</span>
+                    </li>
+                  )
+                )
+              ) : (
+                <p>Carregando...</p>
+              )}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
