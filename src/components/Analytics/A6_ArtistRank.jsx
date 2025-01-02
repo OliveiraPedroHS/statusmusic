@@ -6,9 +6,9 @@ const A6_ArtistRanking = ({ data, artistName }) => {
 
   return (
     <div>
-      <h2>Ranking de {ranking.artist} no Top 100 Artistas</h2>
+      {/* <h2>Ranking de {ranking.artist} no Top 100 Artistas</h2> */}
       {ranking.position ? (
-        <p>{ranking.artist} está na posição #{ranking.position} no top 100 artistas.</p>
+        <p><strong>{ranking.artist}</strong> está na posição #{ranking.position} no top 100 artistas.</p>
       ) : (
         <p>{ranking.artist} não está no top 100 artistas.</p>
       )}

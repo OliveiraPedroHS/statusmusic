@@ -7,11 +7,11 @@
   }
   
   .drop select {
-    background-color: #333;
+    background-color: #443333;
     color: #fff;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #333;  /* Borda inicial */
+    border: 1px solid #443333;  /* Borda inicial */
     width: 200px;
     cursor: pointer;
     transition: border 0.3s ease, background-color 0.3s ease; /* Transição suave */
@@ -20,7 +20,7 @@
   .drop select:focus {
     outline: none; /* Remove o contorno padrão */
     border: 2px solid #DF1737; /* Borda personalizada quando clicado */
-    background-color: #1e1e1e; /* Cor de fundo alterada quando clicado */
+    background-color: #443333; /* Cor de fundo alterada quando clicado */
   }
   
   .drop select:focus option {

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { getTopTracksByArtist } from '../../utils/dataProcessByTopTrackByArtist';
 import { filterDataByPeriod } from '../../utils/dataProcessByPeriod';
+import styles from "../../Styles/ArtistComponent.module.css";
+import drop from "../../Styles/Dropbox.module.css"
 
 const A5_Top20Tracks = ({ data, artistName }) => {
   const [period, setPeriod] = useState('Últimas 4 semanas');  // Estado para controlar o período
@@ -12,11 +14,11 @@ const A5_Top20Tracks = ({ data, artistName }) => {
   const topTracks = getTopTracksByArtist(filteredData, artistName, data);
   
   return (
-    <div>
-      <h2>Top 20 Músicas de {topTracks.artist} - Período: {period}</h2>
+    <div className={styles.a5Container}>
+      <h2 className={styles.a5Title}>Top 20 Músicas de {topTracks.artist} - Período: {period}</h2>
       
       {/* Filtro de período */}
-      <label>
+      <label className={drop.drop}>
         Selecione o período:
         <select value={period} onChange={(e) => setPeriod(e.target.value)}>
           <option value="Últimas 4 semanas">Últimas 4 Semanas</option>
@@ -28,19 +30,20 @@ const A5_Top20Tracks = ({ data, artistName }) => {
       
       {/* Lista das top 20 músicas */}
       {topTracks.object.length > 0 ? (
-        <ul>
+        <div className={styles.a5Cards}>
           {topTracks.object.map((track, index) => (
-            <li key={index}>
-              {track.track}: {track.msPlayed} ms played
-            </li>
+            <div key={index} className={styles.cardMusic}>
+              <div className={styles.a5TrackInfo}>
+                <h3 className={styles.a5TrackName}>{track.track}</h3>
+                <p className={styles.a5TrackDetails}>{track.msPlayed} ms played</p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>Nenhuma música encontrada para {topTracks.artist} no período selecionado.</p>
       )}
     </div>
   );
 };
-
 export default A5_Top20Tracks;
-

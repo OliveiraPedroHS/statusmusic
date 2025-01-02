@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --fundo-background: #1a070e;
+  --button-color: #df1737; /* Cor dos botões */
+  --button-hover-color: #bf152f; /* Cor ao passar o mouse nos botões */
+  --card-background: #443333; /* Cor de fundo elegante */
+  --hover-color: #2a2a2a; /* Cor ao passar o mouse */
+  --text-color: #fff; /* Cor do texto principal */
+  --secondary-text-color: #b3b3b3; /* Cor para texto secundário */
+}
+
+/* Estilização dos botões e do seletor de estação */
+.tabs button {
+  font-family: "Poppins";
+  font-size: 16px;
+  margin: 10px 15px;
+  height: 45px;
+  width: 160px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: none;
+}
+
+.seasonSelector select {
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 16px;
+  border: none;
+  margin: 10px 15px;
+  height: 35px;
+  width: 130px;
+  font-family: "Poppins";
+  padding: 2px;
+  background-color: #ffffff13;
+  color: var(--text-color);
+}
+
+.seasonSelector select:hover {
+  background-color: var(--button-hover-color);
+  color: var(--text-color);
+  font-family: "Poppins";
+}
+
+.tabs button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.listContainer {
+  font-family: "Poppins";
+  margin: 5px 15px;
+  max-width: 1200px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trackList,
+.artistList {
+  font-family: "Poppins";
+  background-color: #ffffff13;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.trackItem,
+.artistItem {
+  font-size: 12px;
+  width: 200px;
+  height: 55px;
+  margin: 5px 0;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+}
+
+.trackItem:hover,
+.artistItem:hover {
+  transition: none;
+  background-color: var(--hover-color);
+  transform: none;
+}
+
+.trackItem .trackName,
+.artistItem .artistName {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trackItem .trackStats,
+.artistItem .artistStats {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  text-align: right;
+  margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  .listContainer {
+    margin: 15px 20px;
+    padding: 1.5rem;
+  }
+
+  .trackList,
+  .artistList {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .trackItem,
+  .artistItem {
+    width: 90%;
+    font-size: 14px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listContainer {
+    padding: 0 10px;
+  }
+
+  .trackList,
+  .artistList {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .trackItem,
+  .artistItem {
+    font-size: 14px;
+    width: 90%;
+    height: 50px;
+  }
+
+  .trackItem .trackName,
+  .artistItem .artistName {
+    font-size: 16px;
+  }
+
+  .trackItem .trackStats,
+  .artistItem .artistStats {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .listContainer {
+    padding: 0 10px;
+  }
+
+  .trackList,
+  .artistList {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .trackItem,
+  .artistItem {
+    flex-direction: row;
+    text-align: left;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .trackItem .trackName,
+  .artistItem .artistName {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .trackItem .trackStats,
+  .artistItem .artistStats {
+    font-size: 12px;
+  }
+}
+
+/* Para iPhone 12 Pro Max, iPhone 13 Pro e iPhone 14 Pro */
+@media (max-width: 430px) {
+  .listContainer {
+    padding: 0 10px; /* Ajuste no padding para evitar espaços excessivos nas laterais */
+    width: 100%; /* Largura total disponível */
+    max-width: 360px; /* Limitar a largura máxima para não ultrapassar os limites da tela */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+  }
+
+  .trackItem,
+  .artistItem {
+    font-size: 10px;
+    height: 50px;
+    width: 100%; /* Garante que o item ocupe a largura total disponível */
+    min-width: 230px; /* Garante que o item não fique muito estreito em telas menores */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo de largura */
+    padding: 5px 10px; /* Ajuste no padding para garantir mais espaço interno */
+    margin: 5px 0px 0px -12px; /* Margem entre os itens */
+  }
+
+  .trackItem .trackName,
+  .artistItem .artistName {
+    font-size: 12px;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona "..." quando o texto ultrapassa a largura */
+  }
+
+  .trackItem .trackStats,
+  .artistItem .artistStats {
+    font-size: 10px;
+  }
+}

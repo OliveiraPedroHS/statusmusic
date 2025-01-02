@@ -9,13 +9,9 @@
     align-items: center; /* Alinha verticalmente os itens no centro */
     transition: transform 0.3s ease, background-color 0.3s ease; /* Transições */
     margin-bottom: 15px; /* Espaço entre os cards */
+    width: 100%;
   }
-  
-  .all:hover {
-    transform: scale(1.05);
-    background-color: #DF1737; /* Cor do fundo no hover */
-  }
-  
+
   .all div {
     margin-left: 10px; /* Distância entre o quadrado e o texto */
   }
@@ -49,7 +45,7 @@
   
   /* Estilo para a numeração */
   .cardNumber {
-    background-color: #444;
+    background-color: #DF1737;
     color: #fff;
     font-size: 16px;
     font-weight: bold;

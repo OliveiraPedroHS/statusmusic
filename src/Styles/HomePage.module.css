@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --fundo-background: #1a070e;
+  --button-color: #df1737; /* Cor dos botões */
+  --button-hover-color: #bf152f; /* Cor ao passar o mouse nos botões */
+  --card-background: #443333; /* Cor de fundo elegante */
+  --hover-color: #2a2a2a; /* Cor ao passar o mouse */
+  --text-color: #fff; /* Cor do texto principal */
+  --secondary-text-color: #b3b3b3; /* Cor para texto secundário */
+}
+
+.homePage {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.top100Container {
+  background-image: url("/public//Fundo/fundo1.png");
+  margin-top: 3rem;
+  padding: 0.6rem;
+  display: flex; /* Usando flexbox para alinhar os itens */
+  flex-direction: column; /* Organiza os itens na coluna */
+  justify-content: space-between; /* Distribui os itens ao longo do eixo vertical */
+  align-items: center; /* Alinha os itens no centro horizontal */
+  border-radius: 20px;
+  width: 23.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+  height: 14rem;
+
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-size: cover; /* Faz a imagem cobrir todo o contêiner */
+}
+
+.top100Container img {
+  width: 4rem; /* Define a largura da imagem */
+  height: 4rem; /* Define a altura da imagem */
+  object-fit: contain; /* Garante que a imagem não distorça */
+  border-radius: 1.25rem;
+}
+
+.top100Container button {
+  background-color: #df1737;
+  border-radius: 0.7rem;
+  border: none;
+  color: white;
+  width: 5rem;
+  height: 2rem;
+  margin-top: 7.1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+}
+
+.cardsContainer {
+  padding: 1rem;
+  padding-top: 2rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardsContainer li {
+  background-color: #443333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+}
+
+.cardsContainer img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.cards2Container {
+  padding-top: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Espaçamento uniforme entre os itens */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  flex-wrap: wrap; /* Permite que os itens ajustem-se em linhas diferentes, se necessário */
+  gap: 10px;
+  width: 100%;
+}
+
+.cards2Container li {
+  background-color: #443333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 8rem; /* Ajusta ao conteúdo */
+  width: 40%; /* Cada item ocupa metade da largura */
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+  transition: transform 0.2s ease-in-out; /* Efeito ao passar o mouse */
+}
+
+.cards2Container img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.listContainer {
+  padding-top: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Espaçamento uniforme entre os itens */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  flex-wrap: wrap; /* Permite que os itens ajustem-se em linhas diferentes, se necessário */
+  gap: 20px;
+  width: 100%;
+}
+
+.listContainer li {
+  background-color: #443333;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  width: 41%; /* Cada item ocupa 41% da largura */
+  text-align: center;
+  width: 80%;
+  transition: transform 0.2s ease-in-out; /* Efeito ao passar o mouse */
+}
+
+.listContainer p {
+  color: #ccc; /* Cor para o texto da lista */
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.listContainer div:hover {
+  transform: scale(1.05); /* Aumenta um pouco o tamanho quando passa o mouse */
+}
+
+/* Barra de navegação */
+.navBar {
+  background-color: #1a070e;
+  position: fixed; /* Fixa a barra no rodapé */
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Altura da barra */
+  display: flex;
+  justify-content: space-around; /* Espaço uniforme entre os itens */
+  align-items: center;
+
+  border-top: 1px solid #333; /* Linha superior para destacar */
+  z-index: 1000;
+}
+
+/* Itens da barra */
+.navItem {
+  display: flex;
+  flex-direction: column; /* Ícone acima do texto */
+  align-items: center;
+  text-align: center;
+  text-decoration: none; /* Remove sublinhado nos links */
+  color: #fff; /* Cor do texto */
+}
+
+/* Efeito hover */
+.navItem:hover {
+  color: #f08080; /* Cor de destaque no hover */
+}
+
+.navItem img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navBar {
+    height: 50px;
+  }
+
+  .navItem p {
+    font-size: 10px;
+  }
+}
